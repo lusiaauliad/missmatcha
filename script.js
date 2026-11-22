@@ -11,11 +11,27 @@ const PRODUCTS = [
   },
   {
     id: "strawberry",
-    name: "Strawberry Matcha",
+    name: "Matcha Strawberry",
     category: "drink",
     price: 25000,
-    description: "A lovely combination of strawberry and authentic matcha.",
-    image: "images/strawberry-matcha.jpg"
+    description: "A lovely combination of sweet strawberry and authentic matcha.",
+    image: "images/matcha-strawberry.jpg"
+  },
+  {
+    id: "choco",
+    name: "Matcha Choco",
+    category: "drink",
+    price: 24000,
+    description: "Rich chocolate blended harmoniously with authentic pure matcha.",
+    image: "images/matcha-choco.jpg"
+  },
+  {
+    id: "ube",
+    name: "Matcha Ube",
+    category: "drink",
+    price: 25000,
+    description: "A delightful fusion of sweet creamy ube and authentic matcha.",
+    image: "images/matcha-ube.jpg"
   },
   {
     id: "pure",

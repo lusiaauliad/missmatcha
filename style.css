@@ -386,16 +386,19 @@ input:focus, textarea:focus, select:focus { border-color: var(--pink); }
 
 .hint { color: var(--muted); font-size: 11px; }
 .qris-box {
-  width: 230px;
-  height: 230px;
+  width: min(290px, 100%);
   background: white;
-  margin: 20px auto;
+  margin: 18px auto;
   padding: 12px;
-  display: grid;
-  place-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-.qris-box img { width: 100%; height: 100%; object-fit: contain; }
-#qrisPlaceholder { font-size: 11px; color: var(--muted); }
+.qris-box img { width: 100%; height: auto; max-height: 380px; object-fit: contain; border-radius: 8px; }
+#qrisPlaceholder { display: none; font-size: 11px; color: var(--muted); padding: 30px 10px; }
 
 .drawer {
   background: var(--cream);
@@ -423,7 +426,8 @@ input:focus, textarea:focus, select:focus { border-color: var(--pink); }
 .empty { text-align: center; color: var(--muted); padding: 50px 0; }
 
 .customize-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.detail-photo { width: 100%; max-height: 230px; object-fit: cover; background: var(--green); }
+.detail-photo { width: 100%; height: 230px; background: var(--green); overflow: hidden; margin-bottom: 16px; border-radius: 6px; }
+.detail-photo img { width: 100%; height: 100%; object-fit: cover; }
 .toast {
   position: fixed;
   bottom: 22px;
