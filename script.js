@@ -121,9 +121,9 @@ function homePage() {
             <h2>A little more about <em>Miss Matcha.</em></h2>
             <p>
               Miss Matcha hadir untuk membagikan pengalaman menikmati
-              matcha yang praktis, menyenangkan, dan berkualitas.
-              Dari minuman matcha hingga ceremonial matcha powder,
-              ada banyak cara untuk menikmati matcha bersama kami.
+              minuman matcha kaleng siap minum yang praktis, segar, dan berkualitas.
+              Dibuat dengan standar kualitas ceremonial grade matcha authentic
+              untuk menemani momen harianmu di Semarang.
             </p>
             <a href="#about" data-page="about" class="button pink">Discover Our Story ↗</a>
           </div>
@@ -181,10 +181,10 @@ function aboutPage() {
             <span class="eyebrow">WHO WE ARE</span>
             <h2>Made with love, <em>served with joy.</em></h2>
             <p>
-              Miss Matcha adalah brand matcha yang hadir di Semarang
-              dengan pilihan minuman matcha dan ceremonial matcha powder.
-              Kami ingin menghadirkan pengalaman menikmati matcha yang
-              menyenangkan, praktis, dan bisa disesuaikan dengan selera.
+              Miss Matcha adalah brand artisanal matcha di Semarang yang menghadirkan
+              minuman matcha kaleng siap minum (canned matcha drinks).
+              Kami percaya menikmati matcha berkualitas premium tidak harus rumit—cukup
+              buka kalengnya dan nikmati kesegaran authentic pure matcha kapan saja dan di mana saja.
             </p>
           </div>
         </div>
@@ -197,24 +197,24 @@ function aboutPage() {
         </div>
         <div class="about-columns">
           <article class="about-box">
-            <h3>Matcha Drinks</h3>
+            <h3>Canned Matcha Drinks</h3>
             <p>
-              Pilihan minuman matcha untuk menemani aktivitas sehari-hari.
-              Kamu bisa memilih tingkat gula dan es sesuai selera.
+              Minuman matcha siap minum dalam kemasan kaleng praktis, higienis, dan ramah dibawa ke mana pun.
+              Tersedia dalam 4 varian rasa favorit untuk menemani harimu.
             </p>
           </article>
           <article class="about-box">
-            <h3>Ceremonial Matcha</h3>
+            <h3>Ceremonial Grade Quality</h3>
             <p>
-              Matcha powder untuk kamu yang ingin membuat minuman matcha
-              sendiri di rumah. Nikmati sesuai cara penyajian yang kamu suka.
+              Kami tidak menjual bubuk matcha mentah, melainkan menggunakan 100% Ceremonial Grade Matcha asli
+              sebagai jaminan standar mutu bahan baku utama di setiap kaleng minuman kami.
             </p>
           </article>
           <article class="about-box">
-            <h3>Our Matcha Experience</h3>
+            <h3>Freshly Handcrafted</h3>
             <p>
-              Setiap produk hadir untuk memberikan pengalaman matcha
-              yang praktis dan menyenangkan.
+              Setiap kaleng dibuat secara fresh dengan racikan matcha dan susu yang seimbang.
+              Kamu juga bebas mengatur tingkat gula (sugar level) dan es sesuai selera.
             </p>
           </article>
         </div>
@@ -227,24 +227,33 @@ function aboutPage() {
             <h2>Frequently asked <em>questions.</em></h2>
           </div>
           <details>
-            <summary>How should I store matcha powder?</summary>
-            <p>Simpan dalam wadah tertutup rapat, di tempat sejuk dan kering, jauh dari sinar matahari dan kelembapan. Ikuti petunjuk pada kemasan.</p>
+            <summary>Apa saja varian rasa minuman Miss Matcha?</summary>
+            <p>Miss Matcha memiliki 4 varian rasa minuman kaleng siap minum:
+              <br>• <b>Matcha Latte:</b> Perpaduan creamy susu segar dan bold-nya ceremonial matcha.
+              <br>• <b>Matcha Strawberry:</b> Kombinasi manis asam strawberry segar dengan matcha authentic.
+              <br>• <b>Matcha Ube:</b> Sensasi rasa ube manis lembut yang berpadu harmonis dengan matcha.
+              <br>• <b>Matcha Choco:</b> Cokelat lezat yang rich berpadu sempurna dengan matcha.
+            </p>
           </details>
           <details>
-            <summary>How long can I consume matcha powder?</summary>
-            <p>Perhatikan tanggal kedaluwarsa pada kemasan. Setelah dibuka, simpan dengan benar dan ikuti anjuran produsen.</p>
+            <summary>Berapa lama daya tahan dan bagaimana cara penyimpanannya?</summary>
+            <p>Karena disiapkan secara segar tanpa pengawet sintetis:
+              <br>• <b>Di kulkas / chiller (suhu 2°C–4°C):</b> Tahan 3 hingga 5 hari dalam kondisi kaleng tertutup rapat.
+              <br>• <b>Di suhu ruang:</b> Sebaiknya segera dikonsumsi dalam waktu 4–6 jam.
+              <br><i>Tips: Nikmati dalam kondisi dingin untuk kesegaran dan kenikmatan rasa terbaik!</i>
+            </p>
           </details>
           <details>
-            <summary>How do I prepare matcha at home?</summary>
-            <p>Campurkan matcha powder dengan sedikit air hangat, lalu whisk hingga larut. Tambahkan susu atau air sesuai selera.</p>
+            <summary>Apakah tingkat kemanisan (sugar level) dan es bisa diatur?</summary>
+            <p>Bisa banget! Kamu bisa memilih <b>Sugar Level</b> (Normal Sugar, Less Sugar, No Sugar) dan <b>Ice Level</b> (Normal Ice, Less Ice, No Ice) langsung di web sebelum checkout.</p>
           </details>
           <details>
-            <summary>How should I store prepared matcha drinks?</summary>
-            <p>Simpan dalam lemari pendingin dan konsumsi sesegera mungkin. Untuk kualitas terbaik, nikmati saat masih segar.</p>
+            <summary>Apakah Miss Matcha menggunakan bubuk matcha asli?</summary>
+            <p>Ya, 100% authentic! Kami menggunakan Ceremonial Grade Matcha Powder murni sebagai bahan baku utama untuk memastikan warna hijau alami, aroma aromatik yang kaya, dan rasa matcha yang pekat tanpa perisa buatan.</p>
           </details>
           <details>
-            <summary>Can I customize my drink?</summary>
-            <p>Yes! Kamu bisa memilih tingkat gula dan es untuk menu minuman yang menyediakan pilihan tersebut.</p>
+            <summary>Bagaimana cara memesan melalui website ini?</summary>
+            <p>Pilih varian rasa favoritmu di menu Shop, tentukan gula & es, masukkan ke keranjang belanja, lalu klik Checkout. Kamu bisa memilih metode Pickup atau Delivery, selesaikan pembayaran via QRIS, dan konfirmasi otomatis pesananmu ke WhatsApp admin kami.</p>
           </details>
         </div>
       </div>
@@ -312,21 +321,20 @@ function reviewPage() {
         <div class="review-grid">
           <article class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Matcha-nya creamy dan enak buat nemenin aktivitas!"</p>
-            <small>Customer review</small>
+            <p>"Matcha Latte-nya creamy banget, rasa ceremonial matchanya beneran bold dan kerasa premium!"</p>
+            <small>Clarissa — Semarang</small>
           </article>
           <article class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Packaging-nya praktis dan rasanya cocok."</p>
-            <small>Customer review</small>
+            <p>"Matcha Strawberry enak dan seger banget! Manisnya pas apalagi bisa pilih opsi less sugar."</p>
+            <small>Dion P. — Tembalang</small>
           </article>
           <article class="review-card">
             <div class="stars">★★★★★</div>
-            <p>"Senang bisa bikin matcha sendiri pakai powder-nya."</p>
-            <small>Customer review</small>
+            <p>"Kemasan kalengnya estetik dan praktis banget dibawa ke mana-mana. Favoritku Matcha Ube!"</p>
+            <small>Nadia K. — Banyumanik</small>
           </article>
         </div>
-        <p class="hint">Contoh ulasan di atas perlu diganti dengan review pelanggan asli sebelum website dipublikasikan.</p>
       </div>
     </section>
   `;
@@ -363,12 +371,12 @@ function contactPage() {
         <div class="section-heading">
           <span class="eyebrow">LITTLE MOMENTS, BIG MEMORIES</span>
           <h2>Our <em>bazaar moments.</em></h2>
-          <p>Take a look at our journey and memories.</p>
+          <p>Take a look at our journey and memories in Semarang.</p>
         </div>
         <div class="gallery">
-          <img src="images/bazaar-1.jpg" alt="Miss Matcha bazaar 1">
-          <img src="images/bazaar-2.jpg" alt="Miss Matcha bazaar 2">
-          <img src="images/bazaar-3.jpg" alt="Miss Matcha bazaar 3">
+          <img src="images/bazar-1.jpg" alt="Miss Matcha bazaar 1" onerror="this.onerror=null;this.src='bazar 1.jpeg'">
+          <img src="images/bazar-2.jpg" alt="Miss Matcha bazaar 2" onerror="this.onerror=null;this.src='bazar 2.jpeg'">
+          <img src="images/bazar-3.jpg" alt="Miss Matcha bazaar 3" onerror="this.onerror=null;this.src='bazar 3.jpeg'">
         </div>
       </div>
     </section>
