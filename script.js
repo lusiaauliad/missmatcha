@@ -591,34 +591,63 @@ $("#accountForm").addEventListener("submit", event => {
 
 /* CHECKOUT - DOES NOT REQUIRE LOGIN */
 
+function renderCheckoutSummary() {
+  const summaryEl = $("#checkoutSummary");
+  if (!summaryEl) return;
+  summaryEl.innerHTML = `
+    <div class="mini-order-list">
+      ${cart.map(item => {
+        const product = PRODUCTS.find(p => p.id === item.id);
+        const options = [item.options.sugar, item.options.ice].filter(Boolean).join(" · ");
+        return `
+          <div class="mini-order-item">
+            <div>
+              <b>${product?.name || "Matcha"}</b> <small>x${item.qty} ${options ? `(${options})` : ""}</small>
+            </div>
+            <b>${money((product?.price || 0) * item.qty)}</b>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+}
+
+function updateDeliveryFields() {
+  const isDelivery = $("#deliveryMethod").value === "Delivery";
+  const addressLabel = $("#addressLabel");
+  if (addressLabel) {
+    addressLabel.style.display = isDelivery ? "block" : "none";
+  }
+  $("#shippingAddress").required = isDelivery;
+}
+
 $("#goCheckout").addEventListener("click", () => {
   if (!cart.length) {
-    showToast("Your cart is empty.");
+    showToast("Keranjang belanja masih kosong ♡");
     return;
   }
 
   $("#buyerName").value = customer?.name || "";
   $("#buyerPhone").value = customer?.phone || "";
   $("#checkoutTotal").textContent = money(totalCart());
+  renderCheckoutSummary();
+  updateDeliveryFields();
 
   closeModal("cartOverlay");
   openModal("checkoutOverlay");
 });
 
-$("#deliveryMethod").addEventListener("change", () => {
-  const delivery = $("#deliveryMethod").value === "Delivery";
-  $("#shippingAddress").required = delivery;
-  $("#shippingAddress").placeholder = delivery
-    ? "Enter your complete delivery address"
-    : "Optional pickup notes";
-});
+$("#deliveryMethod").addEventListener("change", updateDeliveryFields);
 
 $("#checkoutForm").addEventListener("submit", event => {
   event.preventDefault();
 
   if (!cart.length) return;
 
+  const orderId = "MM-" + Math.floor(100000 + Math.random() * 900000);
+
   currentOrder = {
+    id: orderId,
     name: $("#buyerName").value.trim(),
     phone: $("#buyerPhone").value.trim(),
     method: $("#deliveryMethod").value,
@@ -627,6 +656,9 @@ $("#checkoutForm").addEventListener("submit", event => {
     items: cart.map(item => ({ ...item })),
     total: totalCart()
   };
+
+  const idBadge = $("#orderIdBadge");
+  if (idBadge) idBadge.textContent = "ID Pesanan: #" + currentOrder.id;
 
   $("#paymentTotal").textContent = money(currentOrder.total);
   closeModal("checkoutOverlay");
@@ -642,25 +674,25 @@ $("#confirmPayment").addEventListener("click", () => {
     const product = PRODUCTS.find(p => p.id === item.id);
     const options = [item.options.sugar, item.options.ice].filter(Boolean).join(", ");
 
-    return `${product.name} x${item.qty}${options ? " (" + options + ")" : ""} - ${money(product.price * item.qty)}`;
+    return `• ${product.name} x${item.qty}${options ? " (" + options + ")" : ""} = ${money(product.price * item.qty)}`;
   }).join("\n");
 
-  const message = `
-Hello Miss Matcha! I would like to confirm my order.
+  const methodText = currentOrder.method === "Delivery" ? "🛵 Delivery (Diantar)" : "🏪 Pickup (Ambil Sendiri)";
 
-Name: ${currentOrder.name}
-WhatsApp: ${currentOrder.phone}
-Delivery Method: ${currentOrder.method}
-Shipping Address: ${currentOrder.address || "-"}
-Order Notes: ${currentOrder.notes || "-"}
+  const message = `Halo Miss Matcha! ♡
+Saya mau konfirmasi pesanan dari website:
 
-ORDER DETAILS:
+🧾 ID Pesanan: #${currentOrder.id}
+👤 Nama: ${currentOrder.name}
+📱 WhatsApp: ${currentOrder.phone}
+📦 Metode: ${methodText}
+${currentOrder.method === "Delivery" ? `📍 Alamat: ${currentOrder.address}\n` : ""}${currentOrder.notes ? `📝 Catatan: ${currentOrder.notes}\n` : ""}
+🍵 DETAIL PESANAN:
 ${items}
 
-TOTAL: ${money(currentOrder.total)}
+💰 TOTAL PEMBAYARAN: ${money(currentOrder.total)}
 
-I have made my QRIS payment. I will send my payment receipt here. Thank you!
-  `.trim();
+Saya sudah melakukan pembayaran via QRIS. Bukti transfer saya lampirkan setelah pesan ini. Mohon diproses ya kak, terima kasih! ♡`.trim();
 
   localStorage.setItem("mmLastOrder", JSON.stringify({
     ...currentOrder,
@@ -675,7 +707,7 @@ I have made my QRIS payment. I will send my payment receipt here. Thank you!
   saveCart();
   currentOrder = null;
   closeModal("paymentOverlay");
-  showToast("WhatsApp opened for order confirmation.");
+  showToast("Pesanan berhasil dibuat! Membuka WhatsApp... ♡");
 });
 
 /* CLOSE BUTTONS */

@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Miss Matcha | Authentic Pure Matcha in Semarang</title>
+  <meta name="description" content="Nikmati kesegaran authentic pure matcha di Semarang. Pesan Matcha Latte, Matcha Strawberry, Matcha Choco, dan Matcha Ube langsung dari web kami.">
+  <meta property="og:title" content="Miss Matcha | Authentic Pure Matcha in Semarang">
+  <meta property="og:description" content="A Little Matcha Moment, Made With Love ♡. Pesan matcha favoritmu sekarang via QRIS & WhatsApp.">
+  <meta property="og:image" content="images/hero-matcha.jpg">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
@@ -107,32 +112,33 @@
   <div class="overlay" id="checkoutOverlay">
     <div class="modal checkout-modal">
       <button class="close" data-close="checkoutOverlay">×</button>
-      <small class="eyebrow">ALMOST YOURS</small>
-      <h2>Checkout</h2>
+      <small class="eyebrow">PESAN SEKARANG</small>
+      <h2>Checkout Pesanan</h2>
+      <div id="checkoutSummary" class="checkout-summary"></div>
       <form id="checkoutForm">
-        <label>Full Name
-          <input id="buyerName" required placeholder="Your full name">
+        <label>Nama Lengkap
+          <input id="buyerName" required placeholder="Nama lengkap Anda">
         </label>
-        <label>WhatsApp Number
-          <input id="buyerPhone" required placeholder="08xxxxxxxxxx">
+        <label>Nomor WhatsApp
+          <input id="buyerPhone" type="tel" required placeholder="08xxxxxxxxxx">
         </label>
-        <label>Delivery Method
+        <label>Metode Pengambilan
           <select id="deliveryMethod" required>
-            <option value="Pickup">Pickup</option>
-            <option value="Delivery">Delivery</option>
+            <option value="Pickup">Pickup (Ambil Sendiri)</option>
+            <option value="Delivery">Delivery (Diantar ke Alamat)</option>
           </select>
         </label>
-        <label>Shipping Address
-          <textarea id="shippingAddress" rows="3" placeholder="Enter your full address"></textarea>
+        <label id="addressLabel" style="display:none;">Alamat Pengiriman
+          <textarea id="shippingAddress" rows="3" placeholder="Masukkan alamat lengkap pengiriman"></textarea>
         </label>
-        <label>Order Notes
-          <textarea id="orderNotes" rows="2" placeholder="Any special requests?"></textarea>
+        <label>Catatan Pesanan
+          <textarea id="orderNotes" rows="2" placeholder="Catatan tambahan / request khusus (opsional)"></textarea>
         </label>
         <div class="checkout-total">
-          <span>Order Total</span>
+          <span>Total Pesanan</span>
           <b id="checkoutTotal">Rp0</b>
         </div>
-        <button class="button pink full">Continue to Payment</button>
+        <button class="button pink full" type="submit">Lanjut ke Pembayaran QRIS ↗</button>
       </form>
     </div>
   </div>
@@ -141,19 +147,24 @@
   <div class="overlay" id="paymentOverlay">
     <div class="modal payment-modal">
       <button class="close" data-close="paymentOverlay">×</button>
-      <small class="eyebrow">THANK YOU FOR YOUR ORDER</small>
-      <h2>Complete Your Payment</h2>
-      <p class="hint">Scan the QRIS code below to complete your payment.</p>
+      <small class="eyebrow">PEMBAYARAN DIGITAL</small>
+      <h2>Pembayaran QRIS</h2>
+      <div class="order-badge" id="orderIdBadge">#MM-000000</div>
+      <p class="hint">Scan QRIS di bawah ini dengan BCA, Mandiri, BRI, BNI, GoPay, OVO, Dana, atau ShopeePay.</p>
+      
       <div class="qris-box">
-        <img src="images/qris.png" alt="Miss Matcha QRIS" onerror="this.style.display='none';document.getElementById('qrisPlaceholder').style.display='block'">
-        <div id="qrisPlaceholder">Your QRIS image will appear here.<br>Add your QRIS image as <b>images/qris.png</b>.</div>
+        <img id="qrisImage" src="images/qris.png" alt="Miss Matcha QRIS">
+        <div id="qrisPlaceholder">QRIS belum tersedia.</div>
+        <a id="downloadQris" class="download-qris-btn" href="images/qris.png" download="QRIS-MissMatcha.png">⬇ Unduh QRIS untuk Bayar di HP</a>
       </div>
+
       <div class="checkout-total">
-        <span>Total Payment</span>
+        <span>Total Pembayaran</span>
         <b id="paymentTotal">Rp0</b>
       </div>
-      <p class="hint">After payment, send your payment receipt to our WhatsApp for confirmation.</p>
-      <button class="button pink full" id="confirmPayment">Confirm via WhatsApp</button>
+
+      <p class="hint">Setelah transfer, klik tombol di bawah untuk konfirmasi otomatis ke WhatsApp Miss Matcha.</p>
+      <button class="button pink full" id="confirmPayment">Konfirmasi via WhatsApp 📲</button>
     </div>
   </div>
 

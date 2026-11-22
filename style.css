@@ -385,6 +385,67 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus { border-color: var(--pink); }
 
 .hint { color: var(--muted); font-size: 11px; }
+.order-badge {
+  display: inline-block;
+  background: var(--green);
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin: 6px 0 10px;
+  letter-spacing: 0.5px;
+}
+.checkout-summary {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 14px 0;
+  text-align: left;
+}
+.mini-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mini-order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--line);
+}
+.mini-order-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.mini-order-item small {
+  color: var(--muted);
+  display: block;
+  font-size: 10px;
+}
+.download-qris-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--pink);
+  font-weight: 700;
+  padding: 8px 16px;
+  border: 1px dashed var(--pink);
+  border-radius: 8px;
+  background: #fff2f8;
+  transition: .2s;
+  cursor: pointer;
+  width: 100%;
+}
+.download-qris-btn:hover {
+  background: var(--pink);
+  color: white;
+}
 .qris-box {
   width: min(290px, 100%);
   background: white;
