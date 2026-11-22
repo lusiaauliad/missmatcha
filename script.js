@@ -32,22 +32,6 @@ const PRODUCTS = [
     price: 25000,
     description: "A delightful fusion of sweet creamy ube and authentic matcha.",
     image: "images/matcha-ube.jpg"
-  },
-  {
-    id: "pure",
-    name: "Pure Matcha",
-    category: "drink",
-    price: 20000,
-    description: "A simple matcha drink for those who love its original taste.",
-    image: "images/pure-matcha.jpg"
-  },
-  {
-    id: "ceremonial",
-    name: "Ceremonial Matcha Powder",
-    category: "powder",
-    price: 85000,
-    description: "Fine matcha powder for your homemade matcha ritual.",
-    image: "images/ceremonial-matcha.jpg"
   }
 ];
 
@@ -269,6 +253,7 @@ function aboutPage() {
 }
 
 function shopPage() {
+  const categories = [...new Set(PRODUCTS.map(p => p.category))];
   const products = PRODUCTS.filter(product =>
     currentFilter === "all" || product.category === currentFilter
   );
@@ -285,14 +270,16 @@ function shopPage() {
         <div class="page-intro">
           <span class="eyebrow">SHOP MISS MATCHA</span>
           <h2>All <em>products.</em></h2>
-          <p>From refreshing matcha drinks to matcha powder for your home ritual.</p>
+          <p>Refreshing handcrafted matcha drinks for your daily matcha fix.</p>
         </div>
 
+        ${categories.length > 1 ? `
         <div class="product-filters">
           <button class="filter ${currentFilter === "all" ? "active" : ""}" data-filter="all">All Products</button>
-          <button class="filter ${currentFilter === "drink" ? "active" : ""}" data-filter="drink">Matcha Drinks</button>
-          <button class="filter ${currentFilter === "powder" ? "active" : ""}" data-filter="powder">Matcha Powder</button>
+          ${categories.includes("drink") ? `<button class="filter ${currentFilter === "drink" ? "active" : ""}" data-filter="drink">Matcha Drinks</button>` : ""}
+          ${categories.includes("powder") ? `<button class="filter ${currentFilter === "powder" ? "active" : ""}" data-filter="powder">Matcha Powder</button>` : ""}
         </div>
+        ` : ""}
 
         <div class="product-grid">
           ${products.map(product => `
