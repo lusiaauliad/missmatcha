@@ -463,7 +463,15 @@ function openProduct(id) {
       <input id="productQty" type="number" min="1" max="50" value="1">
     </label>
 
-    <button class="button pink full" id="addProductButton">Add to Cart</button>
+    <button class="button pink full" id="addProductButton"><!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MTSYZH623"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2MTSYZH623');
+</script> Cart</button>
   `;
 
   $("#addProductButton").onclick = () => {
@@ -501,6 +509,15 @@ function addToCart(id, options = {}, qty = 1) {
   else cart.push({ key, id, options, qty });
 
   saveCart();
+  if (typeof gtag === 'function') {
+
+  gtag('event', 'add_to_cart', {
+
+    currency: 'IDR'
+
+  });
+
+}
   showToast("Added to your cart ♡");
 }
 
